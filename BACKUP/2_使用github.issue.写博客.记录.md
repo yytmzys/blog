@@ -1,7 +1,7 @@
 # [使用github issue 写博客 记录](https://github.com/yytmzys/blog/issues/2)
 
-使用github issue 写博客 记录 , yihong0618/[gitblog](https://github.com/yihong0618/gitblog)
-
+使用github issue 写博客 记录, 感谢大佬开源 yihong0618/[gitblog](https://github.com/yihong0618/gitblog)
+-----
 ### 1 创建工程
 <img width="717" alt="1" src="https://github.com/yytmzys/blog/assets/45475313/e7100ea3-af37-477d-b4cb-ea7c207b4cc2">
 
@@ -36,3 +36,8 @@ env:
 ### 8 添加一条issue, 标题 内容, 触发 Action, 自动将issue添加到BACKUP文件夹, 创建/编辑issue会自动同步到 README.md, 形成目录
 
 <img width="730" alt="10" src="https://github.com/yytmzys/blog/assets/45475313/98c1e08f-0b30-4316-8038-b6eabe0f82d1">
+
+### 9 添加/编辑标签 Label, 这样 README.md 会按照标签分类
+<img width="1041" alt="11" src="https://github.com/yytmzys/blog/assets/45475313/be867c86-e1fd-4bb3-ad25-6a909fdb11a5">
+<img width="1058" alt="12" src="https://github.com/yytmzys/blog/assets/45475313/d8542be7-3122-4403-9739-606adbc7197b">
+
