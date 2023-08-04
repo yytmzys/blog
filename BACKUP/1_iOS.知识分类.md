@@ -1,6 +1,6 @@
 # [iOS 知识分类](https://github.com/yytmzys/blog/issues/1)
 
-### 0 Objective-C语言基础
+### 0 Objective-C语言基础, 逝去的OC
 
 ### 1 Swift语言基础
 
