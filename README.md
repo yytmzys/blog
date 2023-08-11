@@ -21,11 +21,11 @@ My personal blog using issues and GitHub Actions (随意转载，无需署名)
 </table>
 
 ## 最近更新
+- [网络通信和数据交互](https://github.com/yytmzys/blog/issues/45)--2023-08-11
+- [网络通信和数据交互](https://github.com/yytmzys/blog/issues/44)--2023-08-11
 - [Alamofire 或其他网络库](https://github.com/yytmzys/blog/issues/43)--2023-08-11
 - [网络通信 URLSession](https://github.com/yytmzys/blog/issues/42)--2023-08-11
 - [数据存储和持久化](https://github.com/yytmzys/blog/issues/41)--2023-08-11
-- [数据存储和持久化](https://github.com/yytmzys/blog/issues/40)--2023-08-11
-- [文件系统操作](https://github.com/yytmzys/blog/issues/39)--2023-08-11
 ## UIKit
 - [UIKit 占位](https://github.com/yytmzys/blog/issues/26)--2023-08-11
 - [UIKit占位](https://github.com/yytmzys/blog/issues/25)--2023-08-11
