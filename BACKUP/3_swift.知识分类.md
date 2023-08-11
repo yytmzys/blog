@@ -6,8 +6,8 @@ swift 知识分类
 变量、常量和数据类型 https://github.com/yytmzys/blog/issues/3#issuecomment-1674663958
 运算符 https://github.com/yytmzys/blog/issues/3#issuecomment-1674691646
 表达式 https://github.com/yytmzys/blog/issues/3#issuecomment-1674831952
-控制流程：if、switch、循环
-函数和闭包
+控制流程：if、switch、循环 https://github.com/yytmzys/blog/issues/3#issuecomment-1674878083
+函数和闭包 https://github.com/yytmzys/blog/issues/3#issuecomment-1674887137
 类、结构体和枚举
 属性和方法
 协议和扩展
