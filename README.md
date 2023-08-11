@@ -21,19 +21,21 @@ My personal blog using issues and GitHub Actions (随意转载，无需署名)
 </table>
 
 ## 最近更新
+- [弹出视图 UIAlertController](https://github.com/yytmzys/blog/issues/21)--2023-08-11
+- [页面视图控制器 UIPageViewController](https://github.com/yytmzys/blog/issues/20)--2023-08-11
 - [标签栏控制器](https://github.com/yytmzys/blog/issues/19)--2023-08-11
 - [导航控制器](https://github.com/yytmzys/blog/issues/18)--2023-08-11
 - [集合视图](https://github.com/yytmzys/blog/issues/17)--2023-08-11
-- [表格视图](https://github.com/yytmzys/blog/issues/16)--2023-08-11
-- [控件](https://github.com/yytmzys/blog/issues/15)--2023-08-11
 ## UIKit
+- [弹出视图 UIAlertController](https://github.com/yytmzys/blog/issues/21)--2023-08-11
+- [页面视图控制器 UIPageViewController](https://github.com/yytmzys/blog/issues/20)--2023-08-11
 - [标签栏控制器](https://github.com/yytmzys/blog/issues/19)--2023-08-11
 - [导航控制器](https://github.com/yytmzys/blog/issues/18)--2023-08-11
 - [集合视图](https://github.com/yytmzys/blog/issues/17)--2023-08-11
-- [表格视图](https://github.com/yytmzys/blog/issues/16)--2023-08-11
-- [控件](https://github.com/yytmzys/blog/issues/15)--2023-08-11
 <details><summary>显示更多</summary>
 
+- [表格视图](https://github.com/yytmzys/blog/issues/16)--2023-08-11
+- [控件](https://github.com/yytmzys/blog/issues/15)--2023-08-11
 - [视图](https://github.com/yytmzys/blog/issues/14)--2023-08-11
 - [视图控制器](https://github.com/yytmzys/blog/issues/13)--2023-08-11
 </details>
