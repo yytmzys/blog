@@ -21,11 +21,11 @@ My personal blog using issues and GitHub Actions (随意转载，无需署名)
 </table>
 
 ## 最近更新
+- [图像处理Core Graphics](https://github.com/yytmzys/blog/issues/52)--2023-08-11
+- [手势识别器](https://github.com/yytmzys/blog/issues/51)--2023-08-11
+- [手势识别器](https://github.com/yytmzys/blog/issues/50)--2023-08-11
 - [用户交互和事件处理](https://github.com/yytmzys/blog/issues/49)--2023-08-11
 - [HTTP协议常见错误码](https://github.com/yytmzys/blog/issues/48)--2023-08-11
-- [HTTP协议常见错误码](https://github.com/yytmzys/blog/issues/47)--2023-08-11
-- [HTTPS、对称加密、非对称加密](https://github.com/yytmzys/blog/issues/46)--2023-08-11
-- [网络通信和数据交互](https://github.com/yytmzys/blog/issues/45)--2023-08-11
 ## UIKit
 - [UIKit 占位](https://github.com/yytmzys/blog/issues/26)--2023-08-11
 - [UIKit占位](https://github.com/yytmzys/blog/issues/25)--2023-08-11
