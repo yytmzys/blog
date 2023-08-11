@@ -21,11 +21,11 @@ My personal blog using issues and GitHub Actions (随意转载，无需署名)
 </table>
 
 ## 最近更新
+- [Core Telephony（电话和网络信息）](https://github.com/yytmzys/blog/issues/69)--2023-08-11
 - [Core Spotlight（搜索功能）](https://github.com/yytmzys/blog/issues/68)--2023-08-11
 - [Core NFC（近场通信）](https://github.com/yytmzys/blog/issues/67)--2023-08-11
 - [Core Motion（传感器数据）](https://github.com/yytmzys/blog/issues/66)--2023-08-11
 - [Core Bluetooth（蓝牙通信）](https://github.com/yytmzys/blog/issues/65)--2023-08-11
-- [Core Animation（动画）](https://github.com/yytmzys/blog/issues/64)--2023-08-11
 ## UIKit
 - [UIKit 占位](https://github.com/yytmzys/blog/issues/26)--2023-08-11
 - [UIKit占位](https://github.com/yytmzys/blog/issues/25)--2023-08-11
