@@ -4,15 +4,15 @@
 
 ### 1 Swift语言基础
 
-|  code | [链接url](https://github.com/yytmzys/blog/issues/2) |
+|  code | url|
 |  ----  | ----  | 
-| 变量、常量和数据类型	| https://www.jianshu.com/p/417c10d6cc87|
-| 函数和闭包	| https://www.jianshu.com/p/74ee513d8fd3 |
-| 类和结构体            |            |
-| 枚举            |            |
-| 协议和扩展            |            |
-| 泛型            |            | 
-| 错误处理            |            |
+| 变量、常量和数据类型	| https://github.com/yytmzys/blog/issues/3 |
+| 函数和闭包	| https://github.com/yytmzys/blog/issues/4 |
+| 类和结构体            | https://github.com/yytmzys/blog/issues/5 |
+| 枚举            | https://github.com/yytmzys/blog/issues/6 |
+| 协议和扩展            | https://github.com/yytmzys/blog/issues/7 |
+| 泛型            | https://github.com/yytmzys/blog/issues/8 | 
+| 错误处理            | https://github.com/yytmzys/blog/issues/9 |
 
 ### 2 UIKit框架
 
@@ -36,7 +36,7 @@
 |  ----  | ----  | 
 | AutoLayout  |  https://www.jianshu.com/p/e5ca657d6495?v=1690895203958 |
 | Size Classes            |            |
-| Stack Views            |            |
+| Size Classes            |            |
 | Interface Builder (IB)            |            |
 | Storyboards 和 XIBs            |            |
 
@@ -96,42 +96,42 @@
 
 |  code | 链接 |
 |  ----  | ----  | 
-| 远程推送通知            |            |
-| 本地通知            |            |
+| 远程推送通知            | https://github.com/yytmzys/blog/issues/61 |
+| 本地通知            | https://github.com/yytmzys/blog/issues/62 |
 
 ### 11 常用框架和库
 
 |  code | 链接 |
 |  ----  | ----  | 
-| AVFoundation（多媒体处理）            |            |
+| AVFoundation（多媒体处理） | https://github.com/yytmzys/blog/issues/63 |
 | Core Animation（动画）            |            |
 | Core Bluetooth（蓝牙通信）            |            |
-| Core Motion（传感器数据）            |            |
-| Core NFC（近场通信）            |            |
-| Core Spotlight（搜索功能）            |            |
-| Core Telephony（电话和网络信息）            |            |
+| Core Motion（传感器数据）            | https://github.com/yytmzys/blog/issues/66 |
+| Core NFC（近场通信）            | https://github.com/yytmzys/blog/issues/67 |
+| Core Spotlight（搜索功能）            | https://github.com/yytmzys/blog/issues/68 |
+| Core Telephony（电话和网络信息） | https://github.com/yytmzys/blog/issues/69 |
 
 ### 12 测试和调试
 
 |  code | 链接 |
 |  ----  | ----  | 
-| 单元测试（Unit Testing）            |            |
-| UI测试（UI Testing）            |            |
-| 调试技巧和性能优化            |            |
+| 单元测试（Unit Testing）            | https://github.com/yytmzys/blog/issues/76 |
+| UI测试（UI Testing）            | https://github.com/yytmzys/blog/issues/77 |
+| 调试技巧和性能优化            | https://github.com/yytmzys/blog/issues/78 |
 
 ### 13 应用发布和分发
 
 |  code | 链接 |
 |  ----  | ----  | 
-| 应用打包和签名            |            |
-| App Store上架和审核            |            |
-| 企业分发            |            |
+| 应用打包和签名            | https://github.com/yytmzys/blog/issues/79 |
+| App Store上架和审核    | https://github.com/yytmzys/blog/issues/80|
+| 企业分发            | 企业分发 |
 
 ### 14 设备特定功能和权限
 
 |  code | 链接 |
 |  ----  | ----  | 
-| 相机和相册访问            |            |
+| 相机和相册访问            | https://github.com/yytmzys/blog/issues/82 |
 | 地理位置权限            |            |
 | 通知权限            |            |
 | 蓝牙和NFC权限            |            |
@@ -141,20 +141,20 @@
 |  code | [链接url](https://github.com/yytmzys/blog/issues/16) |
 |  ----  | ----  | 
 | SwiftUI基础 | |
-|  文本视图 Text, Label, TextField, TextEditor, SecureField | https://www.jianshu.com/p/812274ac9dcd  | 
-| 图片 Image AsyncImage| https://www.jianshu.com/p/6fab5d827d2c |
+|  文本视图 Text, Label, TextField, TextEditor, SecureField | https://github.com/yytmzys/blog/issues/86 | 
+| 图片 Image AsyncImage| https://github.com/yytmzys/blog/issues/87 |
 |  按钮-Button  |    | 
 |  导航 Link, NavigationLink| https://www.jianshu.com/p/74ed753feb40  | 
 |                                              |                                             |
-| TabView                               |                                             |
+| TabView                               | https://github.com/yytmzys/blog/issues/90 |
 |  选择器 Picker                | https://www.jianshu.com/p/4b9365d5bed5  | 
-| 开关 指示器 计数器-Toggle ProgressView Stepper | https://www.jianshu.com/p/b493bf0af809 | 
+| 开关 指示器 计数器-Toggle ProgressView Stepper | https://github.com/yytmzys/blog/issues/92 | 
 | 弹窗, Alert, ActionSheet | https://www.jianshu.com/p/c4edd212f59d |
 | 地图 Map  | https://www.jianshu.com/p/bc25595e59f1?v=1690899147140|
 |                                             |                                             |
 |  |  |
 | 视图和布局                           |                                             |
-|  HStack VStack ZStack        | https://www.jianshu.com/p/51385d801570  | 
+|  HStack VStack ZStack        | https://github.com/yytmzys/blog/issues/99  | 
 |  List, ScrollView, LazyVGrid, Form, Spacer, Divider, NavigationView, TabView  | https://www.jianshu.com/p/9f6383144133  | 
 | | |
 | | |
