@@ -28,9 +28,9 @@ My personal blog using issues and GitHub Actions (随意转载，无需署名)
 - [List, ScrollView, LazyVGrid, Form, Spacer, Divider, NavigationView, TabView](https://github.com/yytmzys/blog/issues/100)--2023-08-11
 ## UIKit
 - [UIKit 占位](https://github.com/yytmzys/blog/issues/26)--2023-08-11
-- [UIKit占位](https://github.com/yytmzys/blog/issues/25)--2023-08-11
-- [UIKit占位](https://github.com/yytmzys/blog/issues/24)--2023-08-11
-- [UIKit 占位](https://github.com/yytmzys/blog/issues/23)--2023-08-11
+- [UIKit占位1](https://github.com/yytmzys/blog/issues/25)--2023-08-11
+- [UIKit占位2](https://github.com/yytmzys/blog/issues/24)--2023-08-11
+- [UIKit 占位3](https://github.com/yytmzys/blog/issues/23)--2023-08-11
 - [图片选择器 UIImagePickerController](https://github.com/yytmzys/blog/issues/22)--2023-08-11
 <details><summary>显示更多</summary>
 
