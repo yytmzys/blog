@@ -51,4 +51,5 @@ My personal blog using issues and GitHub Actions (随意转载，无需署名)
 - [导航 Link, NavigationLink](https://github.com/yytmzys/blog/issues/89)--2023-08-11
 - [按钮-Button](https://github.com/yytmzys/blog/issues/88)--2023-08-11
 ## Swift
+- [swift 知识分类](https://github.com/yytmzys/blog/issues/3)--2023-08-04
 - [iOS 知识分类](https://github.com/yytmzys/blog/issues/1)--2023-08-03
