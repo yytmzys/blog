@@ -21,7 +21,7 @@ My personal blog using issues and GitHub Actions (随意转载，无需署名)
 </table>
 
 ## 最近更新
-- [JSON解析和序列化](https://github.com/yytmzys/blog/issues/47)--2023-08-11
+- [HTTP协议常见错误码](https://github.com/yytmzys/blog/issues/47)--2023-08-11
 - [HTTPS、对称加密、非对称加密](https://github.com/yytmzys/blog/issues/46)--2023-08-11
 - [网络通信和数据交互](https://github.com/yytmzys/blog/issues/45)--2023-08-11
 - [网络通信和数据交互](https://github.com/yytmzys/blog/issues/44)--2023-08-11
