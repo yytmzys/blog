@@ -21,11 +21,11 @@ My personal blog using issues and GitHub Actions (随意转载，无需署名)
 </table>
 
 ## 最近更新
+- [后台任务和异步操作](https://github.com/yytmzys/blog/issues/35)--2023-08-11
+- [NSOperation 和 NSOperationQueue](https://github.com/yytmzys/blog/issues/34)--2023-08-11
+- [GCD](https://github.com/yytmzys/blog/issues/33)--2023-08-11
 - [进程 线程 多线程 任务 队列](https://github.com/yytmzys/blog/issues/32)--2023-08-11
 - [Storyboards 和 XIBs](https://github.com/yytmzys/blog/issues/31)--2023-08-11
-- [Interface Builder (IB)](https://github.com/yytmzys/blog/issues/30)--2023-08-11
-- [Size Classes](https://github.com/yytmzys/blog/issues/29)--2023-08-11
-- [Size Classes](https://github.com/yytmzys/blog/issues/28)--2023-08-11
 ## UIKit
 - [UIKit 占位](https://github.com/yytmzys/blog/issues/26)--2023-08-11
 - [UIKit占位](https://github.com/yytmzys/blog/issues/25)--2023-08-11
