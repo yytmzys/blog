@@ -4,7 +4,7 @@
 
 ### 0 SwiftUI
 
-|  code | [链接url](https://github.com/yytmzys/blog/issues/16) |
+|  code | url |
 |  ----  | ----  | 
 | SwiftUI基础 | |
 |  文本视图 Text, Label, TextField, TextEditor, SecureField | https://github.com/yytmzys/blog/issues/86 | 
