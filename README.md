@@ -21,11 +21,11 @@ My personal blog using issues and GitHub Actions (随意转载，无需署名)
 </table>
 
 ## 最近更新
+- [本地通知](https://github.com/yytmzys/blog/issues/62)--2023-08-11
+- [远程推送通知](https://github.com/yytmzys/blog/issues/61)--2023-08-11
 - [高德地图](https://github.com/yytmzys/blog/issues/60)--2023-08-11
 - [百度地图](https://github.com/yytmzys/blog/issues/59)--2023-08-11
 - [地图](https://github.com/yytmzys/blog/issues/58)--2023-08-11
-- [地图 Core Location](https://github.com/yytmzys/blog/issues/57)--2023-08-11
-- [视频频播放和录制](https://github.com/yytmzys/blog/issues/56)--2023-08-11
 ## UIKit
 - [UIKit 占位](https://github.com/yytmzys/blog/issues/26)--2023-08-11
 - [UIKit占位](https://github.com/yytmzys/blog/issues/25)--2023-08-11
