@@ -21,11 +21,11 @@ My personal blog using issues and GitHub Actions (随意转载，无需署名)
 </table>
 
 ## 最近更新
-- [Core Telephony（电话和网络信息）](https://github.com/yytmzys/blog/issues/69)--2023-08-11
-- [Core Spotlight（搜索功能）](https://github.com/yytmzys/blog/issues/68)--2023-08-11
-- [Core NFC（近场通信）](https://github.com/yytmzys/blog/issues/67)--2023-08-11
-- [Core Motion（传感器数据）](https://github.com/yytmzys/blog/issues/66)--2023-08-11
-- [Core Bluetooth（蓝牙通信）](https://github.com/yytmzys/blog/issues/65)--2023-08-11
+- [自定义视图和组件](https://github.com/yytmzys/blog/issues/104)--2023-08-11
+- [SwiftUI与UIKit混编](https://github.com/yytmzys/blog/issues/103)--2023-08-11
+- [SwiftUI 数据绑定和状态管理](https://github.com/yytmzys/blog/issues/102)--2023-08-11
+- [SwiftUI](https://github.com/yytmzys/blog/issues/101)--2023-08-11
+- [List, ScrollView, LazyVGrid, Form, Spacer, Divider, NavigationView, TabView](https://github.com/yytmzys/blog/issues/100)--2023-08-11
 ## UIKit
 - [UIKit 占位](https://github.com/yytmzys/blog/issues/26)--2023-08-11
 - [UIKit占位](https://github.com/yytmzys/blog/issues/25)--2023-08-11
@@ -45,5 +45,10 @@ My personal blog using issues and GitHub Actions (随意转载，无需署名)
 - [视图控制器](https://github.com/yytmzys/blog/issues/13)--2023-08-11
 </details>
 
+## SwiftUI
+- [选择器 Picker](https://github.com/yytmzys/blog/issues/91)--2023-08-11
+- [TabView 分页视图](https://github.com/yytmzys/blog/issues/90)--2023-08-11
+- [导航 Link, NavigationLink](https://github.com/yytmzys/blog/issues/89)--2023-08-11
+- [按钮-Button](https://github.com/yytmzys/blog/issues/88)--2023-08-11
 ## Swift
 - [iOS 知识分类](https://github.com/yytmzys/blog/issues/1)--2023-08-03
