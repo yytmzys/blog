@@ -21,6 +21,7 @@ My personal blog using issues and GitHub Actions (随意转载，无需署名)
 </table>
 
 ## 最近更新
+- [Swift 函数](https://github.com/yytmzys/blog/issues/4)--2023-08-11
 - [变量、常量和数据类型](https://github.com/yytmzys/blog/issues/3)--2023-08-04
 - [使用github issue 写博客-记录, 技术如此优雅](https://github.com/yytmzys/blog/issues/2)--2023-08-03
 - [iOS 知识分类](https://github.com/yytmzys/blog/issues/1)--2023-08-03
