@@ -1,6 +1,33 @@
 # [iOS 知识分类](https://github.com/yytmzys/blog/issues/1)
 
-### 0 Objective-C语言基础, 逝去的OC
+### -1 Objective-C语言基础, 逝去的OC
+
+### 0 SwiftUI
+
+|  code | [链接url](https://github.com/yytmzys/blog/issues/16) |
+|  ----  | ----  | 
+| SwiftUI基础 | |
+|  文本视图 Text, Label, TextField, TextEditor, SecureField | https://github.com/yytmzys/blog/issues/86 | 
+| 图片 Image AsyncImage| https://github.com/yytmzys/blog/issues/87 |
+|  按钮-Button  |    | 
+|  导航 Link, NavigationLink| https://www.jianshu.com/p/74ed753feb40  | 
+|                                              |                                             |
+| TabView                               | https://github.com/yytmzys/blog/issues/90 |
+|  选择器 Picker                | https://www.jianshu.com/p/4b9365d5bed5  | 
+| 开关 指示器 计数器-Toggle ProgressView Stepper | https://github.com/yytmzys/blog/issues/92 | 
+| 弹窗, Alert, ActionSheet | https://www.jianshu.com/p/c4edd212f59d |
+| 地图 Map  | https://www.jianshu.com/p/bc25595e59f1?v=1690899147140|
+|                                             |                                             |
+|  |  |
+| 视图和布局                           |                                             |
+|  HStack VStack ZStack        | https://github.com/yytmzys/blog/issues/99  | 
+|  List, ScrollView, LazyVGrid, Form, Spacer, Divider, NavigationView, TabView  | https://www.jianshu.com/p/9f6383144133  | 
+| | |
+| | |
+| 数据绑定和状态管理            |                                              |
+| 自定义视图和组件               |                                              |
+| SwiftUI与UIKit混编              |                                              |
+
 
 ### 1 Swift语言基础
 
@@ -135,29 +162,3 @@
 | 地理位置权限            |            |
 | 通知权限            |            |
 | 蓝牙和NFC权限            |            |
-
-### 15 SwiftUI
-
-|  code | [链接url](https://github.com/yytmzys/blog/issues/16) |
-|  ----  | ----  | 
-| SwiftUI基础 | |
-|  文本视图 Text, Label, TextField, TextEditor, SecureField | https://github.com/yytmzys/blog/issues/86 | 
-| 图片 Image AsyncImage| https://github.com/yytmzys/blog/issues/87 |
-|  按钮-Button  |    | 
-|  导航 Link, NavigationLink| https://www.jianshu.com/p/74ed753feb40  | 
-|                                              |                                             |
-| TabView                               | https://github.com/yytmzys/blog/issues/90 |
-|  选择器 Picker                | https://www.jianshu.com/p/4b9365d5bed5  | 
-| 开关 指示器 计数器-Toggle ProgressView Stepper | https://github.com/yytmzys/blog/issues/92 | 
-| 弹窗, Alert, ActionSheet | https://www.jianshu.com/p/c4edd212f59d |
-| 地图 Map  | https://www.jianshu.com/p/bc25595e59f1?v=1690899147140|
-|                                             |                                             |
-|  |  |
-| 视图和布局                           |                                             |
-|  HStack VStack ZStack        | https://github.com/yytmzys/blog/issues/99  | 
-|  List, ScrollView, LazyVGrid, Form, Spacer, Divider, NavigationView, TabView  | https://www.jianshu.com/p/9f6383144133  | 
-| | |
-| | |
-| 数据绑定和状态管理            |                                              |
-| 自定义视图和组件               |                                              |
-| SwiftUI与UIKit混编              |                                              |
