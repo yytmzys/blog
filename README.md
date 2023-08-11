@@ -21,11 +21,11 @@ My personal blog using issues and GitHub Actions (随意转载，无需署名)
 </table>
 
 ## 最近更新
+- [地图 Core Location](https://github.com/yytmzys/blog/issues/57)--2023-08-11
+- [视频频播放和录制](https://github.com/yytmzys/blog/issues/56)--2023-08-11
 - [音频播放和录制](https://github.com/yytmzys/blog/issues/55)--2023-08-11
 - [图片处理](https://github.com/yytmzys/blog/issues/54)--2023-08-11
 - [图像处理](https://github.com/yytmzys/blog/issues/53)--2023-08-11
-- [图像处理Core Graphics](https://github.com/yytmzys/blog/issues/52)--2023-08-11
-- [手势识别器](https://github.com/yytmzys/blog/issues/51)--2023-08-11
 ## UIKit
 - [UIKit 占位](https://github.com/yytmzys/blog/issues/26)--2023-08-11
 - [UIKit占位](https://github.com/yytmzys/blog/issues/25)--2023-08-11
