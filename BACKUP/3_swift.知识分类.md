@@ -490,74 +490,79 @@ Swift 运算符优先级 (从高到低)：
 
 ---
 
-在Swift中，表达式是一种计算值或执行操作的代码片段。表达式可以包括字面量（例如数字、字符串、布尔值等），变量、运算符、函数调用以及各种组合。以下是一些常见的Swift表达式类型：
+Swift 表达式
+----
+是一种计算值或执行操作的代码片段。表达式可以包括字面量（例如数字、字符串、布尔值等），变量、运算符、函数调用以及各种组合。以下是一些常见的Swift表达式类型：
 
-算术表达式：用于数学计算。
+### 1 算术表达式：用于数学计算。
 ```Swift
 let sum = 10 + 20
 let product = 5 * 6
 ```
 
-比较表达式：用于比较两个值。
-swift
-Copy code
+### 2 比较表达式：用于比较两个值。
+```swift
 let isEqual = 10 == 10
 let isGreater = 15 > 10
-逻辑表达式：用于布尔逻辑运算。
+```
 
-swift
-Copy code
+### 3 逻辑表达式：用于布尔逻辑运算。
+
+```swift
 let isTrue = true
 let isFalse = false
 let logicalAnd = isTrue && isFalse
 let logicalOr = isTrue || isFalse
-字符串拼接表达式：将字符串连接起来。
+```
 
-swift
-Copy code
+### 4 字符串拼接表达式：将字符串连接起来。
+
+```swift
 let firstName = "John"
 let lastName = "Doe"
 let fullName = firstName + " " + lastName
-函数调用表达式：调用函数以执行特定操作。
+```
 
-swift
-Copy code
+### 5 函数调用表达式：调用函数以执行特定操作。
+```swift
 func greet(name: String) -> String {
     return "Hello, " + name + "!"
 }
 let greeting = greet(name: "Alice")
-条件表达式：根据条件选择不同的值。
+```
 
-swift
-Copy code
+### 6 条件表达式：根据条件选择不同的值。
+
+```swift
 let score = 85
 let passStatus = score >= 60 ? "Pass" : "Fail"
-可选链表达式：处理可选值的安全访问。
+```
 
-swift
-Copy code
+### 7 可选链表达式：处理可选值的安全访问。
+```swift
 let optionalName: String? = "Alice"
 let nameLength = optionalName?.count ?? 0
-强制解包表达式：从可选值中获取实际值。
+```
 
-swift
-Copy code
+### 8 强制解包表达式：从可选值中获取实际值。
+```swift
 let optionalNumber: Int? = 42
 let unwrappedNumber = optionalNumber!
-数组和字典字面量表达式：用于创建数组和字典。
+```
 
-swift
-Copy code
+### 9 数组和字典字面量表达式：用于创建数组和字典。
+```swift
 let numbers = [1, 2, 3, 4, 5]
 let person = ["name": "Alice", "age": 30]
-闭包表达式：创建匿名函数或闭包。
+```
 
-swift
-Copy code
+### 10 闭包表达式：创建匿名函数或闭包。
+```swift
 let multiply: (Int, Int) -> Int = { a, b in
     return a * b
 }
 let result = multiply(5, 6)
+```
 这些都是Swift中常见的表达式类型，它们用于构建功能丰富的代码以执行各种操作。
 
 
