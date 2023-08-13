@@ -1069,7 +1069,7 @@ someFunction(firstParameterName: 1, secondParameterName: 2)
         print("zero!")
 ```
         
-#### 嵌套函数,
+### 嵌套函数,
 ##### 可以把函数定义在别的函数体中.    默认情况下, 嵌套函数对外界是不可见的, 但是可以被它们的外围函数(enclosing function) 调用.    一个外围函数也可以返回它的某一个嵌套函数, 使得这个函数可以在其他领域中被使用
 ```Swift
         func chooseStepFunction2(backward: Bool) -> (Int) -> Int {
