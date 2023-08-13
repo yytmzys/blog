@@ -7,7 +7,8 @@ swift 知识分类
 运算符 https://github.com/yytmzys/blog/issues/3#issuecomment-1674691646
 表达式 https://github.com/yytmzys/blog/issues/3#issuecomment-1674831952
 控制流程：if、switch、循环 https://github.com/yytmzys/blog/issues/3#issuecomment-1674878083
-函数和闭包 https://github.com/yytmzys/blog/issues/3#issuecomment-1674887137
+函数 https://github.com/yytmzys/blog/issues/3#issuecomment-1674887137
+闭包 
 类、结构体和枚举
 属性和方法
 协议和扩展
@@ -864,7 +865,7 @@ switch index {
         greet3(person: "Dave")
 ```
         
-###### 被调用时, 一个函数的返回值可以被忽略
+###### 被调用时, 一个函数的返回值可以被忽略, 下划线 _
 ```Swift
         func printAndCount(string: String) -> Int {
             print(string)
@@ -878,7 +879,7 @@ switch index {
         pringWithoutCounting(string: "Hello, World!")
 ```
         
-#### 2.4 多重返回值函数
+#### 2.4 多返回值函数, 返回一个元祖
 ```Swift
         func minMax(array: [Int]) -> (min: Int, max: Int) {
             var currentMin = array[0]
@@ -916,30 +917,63 @@ switch index {
         let bounds2 = minMax2(array: [8, -9, 2, 109, 2, 76])
         print("min is \(bounds2?.min) and max is \(bounds2?.max)")
 ```        
-        // 函数参数标签和参数名称, 你可以在参数名称前指定它的参数标签, 中间以空格分割,
-        //    参数标签的使用能够让一个函数在调用时更有表达力, 更类似自然语言, 并且扔保持了函数内部的可读性以及清晰的意图
+#### 2.6 隐式返回的函数, 省略 return
+如果整个函数体是一个单一表达式，那么函数隐式返回这个表达式，比如说，下边的两个函数有着相同的行为：
+greeting(for:) 函数的整个定义是返回一个打招呼，也就是说它可以使用这个简化格式。 anotherGreeting(for:) 函数返回相同的打招呼信息，像长一点的函数使用 return 关键字。你写的任何只有一行 return 的函数都可以省略那个 return 。
+```swift
+func greeting(for person: String) -> String {
+    "Hello, " + person + "!"
+}
+print(greeting(for: "Dave"))
+// Prints "Hello, Dave!"
+ 
+func anotherGreeting(for person: String) -> String {
+    return "Hello, " + person + "!"
+}
+print(anotherGreeting(for: "Dave"))
+// Prints "Hello, Dave!"
+```
+
+### 3 函数 实际参数标签 和 形式参数名
+每一个函数的形式参数都包含实际参数标签和形式参数名。实际参数标签用在调用函数的时候；在调用函数的时候每一个实际参数前边都要写实际参数标签。形式参数名用在函数的实现当中。默认情况下，形式参数使用它们的形式参数名作为实际参数标签。
+所有的形式参数必须有唯一的名字。尽管有可能多个形式参数拥有相同的实际参数标签，唯一的实际参数标签有助于让你的代码更加易读。
+```swift
+func someFunction(firstParameterName: Int, secondParameterName: Int) {
+}
+someFunction(firstParameterName: 1, secondParameterName: 2)
+```
+#### 3.1 指定实际参数标签
+ 函数参数标签 和 参数名称, 你可以在 参数名称前 指定它的 参数标签, 中间以空格分割
+参数标签 的使用能够让一个函数在调用时更有表达力, 更类似自然语言, 并且保持了函数内部的可读性以及清晰的意图
+```Swift
         func greet4(person: String, from hometown: String) -> String {
             return "Hello \(person)! Glad you could visit from \(hometown)."
         }
         print(greet4(person: "Bill", from: "Cupertino"))
         // Hello Bill! Glad you could visit from Cupertino.
-        
-        // 忽略函数标签,  如果你不希望为某个参数添加一个标签, 可以使用一个下划线 _ 来代替一个明确的参数标签,
-        //           如果一个参数有一个标签, 那么在调用的时候必须用标签来标记这个参数
+```        
+#### 3.2 省略函数标签,  
+如果你不希望为某个参数添加一个标签, 可以使用一个下划线 _ 来代替一个明确的参数标签
+如果一个参数有一个标签, 那么在调用的时候必须用标签来标记这个参数
+```Swift
         func greet5(_ person: String, from hometown:String) -> String {
             return "Hello \(person)! Glad you could visit from \(hometown)."
         }
         print(greet5("Bill", from: "Cupertino"))
-        
-        // 默认参数值 , 你可以在函数体中通过给参数值来为任意一个参数定义默认值, 当默认值被定以后, 调用这个函数时就可以忽略这个参数
+```        
+#### 3.3  默认参数值 
+你可以在函数体中通过给参数值来为任意一个参数定义默认值, 当默认值被定以后, 调用这个函数时就可以忽略这个参数
+```Swift
         func greet6(person: String, hometown: String = "earth") -> (String){
             return "Hello \(person)! Glad you could visit from \(hometown)."
         }
         print(greet6(person: "Bill"))
         // Hello Bill! Glad you could visit from earth.
-        
-        // 可变参数, 可以接受零个或多个值. 函数调用时, 你可以用可变参数来指定函数参数可以被传入不确定数量的输入值. 通过在变量类型名后面加入 ... 的方式来定义可变参数
-        // 可变参数的传入值在函数体重变为此类型的一个数组. 例如, 一个叫做numbers 的 Double... 型可变参数, 在函数体内可以当做一个叫numbers 的 [Double]型的数组常量
+```        
+#### 3.4 可变参数
+可以接受零个或多个值. 函数调用时, 你可以用可变参数来指定函数参数可以被传入不确定数量的输入值. 通过在变量类型名后面加入 ... 的方式来定义可变参数
+可变参数 的传入值在函数体重变为此类型的一个数组. 例如, 一个叫做numbers 的 Double... 型可变参数, 在函数体内可以当做一个叫numbers 的 [Double]型的数组常量
+```Swift
         func arithmeticMean(_ numbers: Double...) -> Double {
             var total: Double = 0
             for number in numbers {
@@ -951,8 +985,10 @@ switch index {
         
         print(arithmeticMean(1, 2, 3, 4, 5))    // 3.0
         print(arithmeticMean(1, 2, 3, 4, 5, 7)) // 3.66666666666667
-        
-        // 输入输出参数
+```        
+#### 3.5 输入输出参数
+在形式参数定义开始的时候在前边添加一个 inout关键字可以定义一个输入输出形式参数。输入输出形式参数有一个能输入给函数的值，函数能对其进行修改，还能输出到函数外边替换原来的值。
+```Swift
         func swapTwoInts(_ a: inout Int, _ b: inout Int ) -> (Int, Int) {
             let temp = a
             a = b
@@ -963,32 +999,52 @@ switch index {
         var a = 3
         var b = 5
         print(swapTwoInts(&a, &b))  // (5, 3)
-        
-        // 函数类型. 每个函数都有种特定的函数类型, 函数的类型都由函数的参数类型和返回值类型组成
+```        
+
+### 3 函数类型. 
+#### 每个函数都有种特定的函数类型, 函数的类型都由函数的 参数类型 和 返回值类型 组成
+下面两个函数的类型是 (Int, Int) -> Int, 可以解读为" 这个函数类型有两个 Int 型的参数并返回一个 Int 型的值".
+```swift
         func addTwoInts(_ a: Int, _ b: Int) -> Int{
             return a + b
         }
         func multiplyTwoInts(_ a: Int, _ b: Int) -> Int {
             return a * b
         }
-        // 这两个函数的类型是 (Int, Int) -> Int, 可以解读为" 这个函数类型有两个 Int 型的参数并返回一个 Int 型的值".
+```
         
-        // 使用函数类型, 在Swift中, 使用函数类型就像使用其他类型一样.
-        var mathFunction: (Int, Int) -> Int = addTwoInts
-        // 这段代码可以理解为:  定义一个叫做 mathFunction的常量, 类型是'一个有两个Int型的参数并返回一个Int型的值得函数', 并让这个新变量指向 addTwoInts 函数, addTwoInts 和 mathFunction 有同样的类型, 所以这个赋值 在 Swi 类型检查(type-check) 中是允许的
+下边是只有函数名，没有形式参数和返回值的函数。
+```
+  func printHelloWorld() {
+      print("hello, world")
+  }
+```
+
+#### 3.1 使用函数类型, 
+在Swift中, 使用函数类型就像使用其他类型一样.
+```swift
+    var mathFunction: (Int, Int) -> Int = addTwoInts
+```
+这段代码可以理解为:  定义一个叫做 mathFunction的常量, 类型是 '一个有两个Int型的参数并返回一个Int型的值的函数' , 并让这个新变量指向 addTwoInts 函数, addTwoInts 和 mathFunction 有同样的类型, 所以这个赋值 在 Swift 类型检查(type-check) 中是允许的
+```
         print(mathFunction( 2, 3)) // 5
-        // 有相同匹配类型的不同函数可以被赋值给同一个变量,
+        // 有相同匹配类型的 不同函数 可以被赋值给 同一个变量
         mathFunction = multiplyTwoInts
         print(mathFunction( 2, 3)) // 6
+```     
         
-        
-        // 函数类型作为参数类型,  你可以用 (Int, Int) -> Int 这样的函数类型最为另一个函数的参数类型. 这样可以将函数的一部分实现留给函数的调用者来提供
+#### 3.2 函数类型作为参数类型,  
+你可以用 (Int, Int) -> Int 这样的函数类型最为另一个函数的参数类型. 这样可以将函数的一部分实现留给函数的调用者来提供
+```Swift
         func printMathResult(_ mathFunction: (Int, Int) -> Int, a: Int, _ b: Int) {
             print("Result: \(mathFunction(a, b))")
         }
         printMathResult(addTwoInts, a: 2, 3) // Result: 8
+```
         
-        // 函数类型作为返回类型, 你可以用函数类型作为另一个函数的返回类型, 你需要做的就是在返回箭头 -> 后写一个完整的函数类型
+#### 3.3 函数类型作为返回类型, 
+你可以用函数类型作为另一个函数的返回类型, 你需要做的就是在返回箭头 -> 后写一个完整的函数类型
+```Swift
         func stepForward(_ input: Int) -> Int{
             return input + 1
         }
@@ -996,7 +1052,9 @@ switch index {
         func stepBackward(_ input: Int) -> Int {
             return input - 1
         }
-        // 如下名为chooseStepFunction的函数, 它的返回值类型是 (Int) -> int 类型的函数
+```
+##### 如下名为chooseStepFunction的函数, 它的返回值类型是 (Int) -> int 类型的函数
+```Swift
         func chooseStepFunction(backward: Bool) -> (Int) -> Int {
             return backward ? stepForward : stepBackward
         }
@@ -1009,6 +1067,7 @@ switch index {
             currentValue = moveNearerToZero(currentValue)
         }
         print("zero!")
+```
         
 #### 嵌套函数,
 ##### 可以把函数定义在别的函数体中.    默认情况下, 嵌套函数对外界是不可见的, 但是可以被它们的外围函数(enclosing function) 调用.    一个外围函数也可以返回它的某一个嵌套函数, 使得这个函数可以在其他领域中被使用
