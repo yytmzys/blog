@@ -8,7 +8,7 @@ swift 知识分类
 表达式 https://github.com/yytmzys/blog/issues/3#issuecomment-1674831952
 控制流程：if、switch、循环 https://github.com/yytmzys/blog/issues/3#issuecomment-1674878083
 函数 https://github.com/yytmzys/blog/issues/3#issuecomment-1674887137
-闭包 
+闭包 https://github.com/yytmzys/blog/issues/3#issuecomment-1676376329
 类、结构体和枚举
 属性和方法
 协议和扩展
@@ -1087,3 +1087,9 @@ someFunction(firstParameterName: 1, secondParameterName: 2)
         }
         print("zero!")
 ```
+
+
+---
+
+闭包
+----
