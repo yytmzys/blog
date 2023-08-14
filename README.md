@@ -21,11 +21,11 @@ My personal blog using issues and GitHub Actions (随意转载，无需署名)
 </table>
 
 ## 最近更新
+- [语法和基础](https://github.com/yytmzys/blog/issues/105)--2023-08-14
 - [自定义视图和组件](https://github.com/yytmzys/blog/issues/104)--2023-08-11
 - [SwiftUI与UIKit混编](https://github.com/yytmzys/blog/issues/103)--2023-08-11
 - [SwiftUI 数据绑定和状态管理](https://github.com/yytmzys/blog/issues/102)--2023-08-11
 - [SwiftUI](https://github.com/yytmzys/blog/issues/101)--2023-08-11
-- [List, ScrollView, LazyVGrid, Form, Spacer, Divider, NavigationView, TabView](https://github.com/yytmzys/blog/issues/100)--2023-08-11
 ## UIKit
 - [UIKit 占位](https://github.com/yytmzys/blog/issues/26)--2023-08-11
 - [UIKit占位1](https://github.com/yytmzys/blog/issues/25)--2023-08-11
