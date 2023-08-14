@@ -1093,3 +1093,214 @@ someFunction(firstParameterName: 1, secondParameterName: 2)
 
 闭包
 ----
+闭包是可以在你的代码中被传递和引用的功能性独立代码块。Swift 中的闭包和 C  以及 Objective-C 中的 blocks 很像，还有其他语言中的匿名函数也类似。
+
+闭包 能够 捕获和 存储 定义在其上下文中的任何 常量和变量 的引用，这也就是所谓的闭合并包裹那些常量和变量，因此被称为“闭包”，Swift 能够为你处理所有关于捕获的内存管理的操作。
+
+### 1 闭包表达式
+闭包表达式是一种在简短行内就能写完闭包的语法。闭包表达式为了缩减书写长度又不失易读明晰而提供了一系列的语法优化。下边的闭包表达式栗子通过使用几次迭代展示 sorted(by:)方法的精简来展示这些优化，每一次都让相同的功能性更加简明扼要。
+
+#### 1.1 Sorted 方法调用
+```Swift
+  let names = ["Chris","Alex","Ewa","Barry","Daniella"]
+  
+  func backward(_ s1: String, _ s2: String) -> Bool {
+      return s1 > s2
+  }
+  var reversedNames = names.sorted(by: backward)
+  // reversedNames = ["Ewa", "Daniella", "Chris", "Barry", "Alex"]
+```        
+
+#### 1.2 闭包表达式语法
+闭包表达式语法有如下的一般形式：
+```Swift
+{ (parameters) -> (return type) in
+    statements
+  }
+```
+闭包表达式语法能够使用常量形式参数、变量形式参数和输入输出形式参数，但不能提供默认值。可变形式参数也能使用，但需要在形式参数列表的最后面使用。元组也可被用来作为形式参数和返回类型。
+
+in 关键字 导入闭包的函数整体部分，这个关键字表示闭包的形式参数类型和返回类型定义已经完成，并且闭包的函数体即将开始。
+Sorted 方法,使用闭包, (函数 backward 匿名了)
+```Swift
+  reversedNames = names.sorted(by: { (s1: String, s2: String) -> Bool in
+      return s1 > s2
+  })
+```
+闭包的函数体特别短, 以至于能够只用一行来书写：
+```Swift
+reversedNames = names.sorted(by: { (s1: String, s2: String) -> Bool in return s1 > s2 } )
+```
+##### 示例中 sorted(by:) 方法的整体部分调用保持不变,一对圆括号仍然包裹函数的所有实际参数。然而，这些实际参数中的一个变成了现在的行内闭包。
+
+#### 1.3 从语境中推断类型
+由于排序闭包为实际参数来传递给方法，Swift 就能推断它的形式参数类型和返回类型。 sorted(by:) 方法是在字符串数组上调用的，所以它的形式参数必须是一个 (String, String) -> Bool 类型的函数。这意味着 (String, String)和 Bool 类型不需要写成闭包表达式定义中的一部分。
+因为 所有的类型 都能被推断，返回箭头 ( ->) 和 围绕在形式参数名周围的括号 也能被省略：
+```Swift
+  reversedNames = names.sorted(by: { s1, s2 in return s1 > s2 } )
+```        
+
+##### 当把闭包作为行内闭包表达式传递给函数或方法时，形式参数类型和返回类型都可以被推断出来。所以说，当闭包被用作函数的实际参数时你都不需要用完整格式来书写行内闭包。
+
+#### 1.4 从单表达式闭包隐式返回
+单表达式闭包能够通过从它们的声明中  删掉 return  关键字来  隐式返回  它们单个表达式的结果，前面的栗子可以写作：
+```Swift
+  reversedNames = names.sorted(by: { s1, s2 in s1 > s2 } )
+```
+这里， sorted(by:) 函数类型的实际参数已经明确必须通过闭包返回一个 Bool 值。因为闭包的结构包含返回 Bool 值的单一表达式 (s1 > s2)，因此没有歧义，  return 关键字可省略。
+
+#### 1.5 简写的实际参数名
+Swift 自动对行内闭包提供简写实际参数名，你也可以通过   $0 , $1 , $2   等名字来引用闭包的实际参数值。 in  关键字也能被省略，
+```Swift
+    reversedNames = names.sorted(by: { $0 > $1 } )
+```
+
+#### 1.6 运算符函数
+Swift 的 String 类型定义了关于大于号（ >）的特定字符串实现，让其作为一个有两个 String 类型形式参数的函数并返回一个 Bool 类型的值。
+sorted(by:) 方法的第二个形式参数需要的函数相匹配。
+因此，传递一个 大于号，Swift 将推断你想使用 大于号 特殊字符串 函数实现：
+```Swift
+  reversedNames = names.sorted(by: >)
+```
+
+### 2 尾随闭包
+将一个 很长的闭包表达式 作为 函数最后一个实际参数 传递给函数，使用尾随闭包将
+增强函数的可读性. 
+尾随闭包 是一个被书写在函数形式参数的括号外面（后面）的闭包表达式，但它仍然是这个 函数的实际参数。当你使用 尾随闭包表达式 时，不需要把第一个尾随闭包写对应的实际参数标签。函数调用可包含多个尾随闭包，但下边的例子展示了
+单一尾随闭包的写法：
+```Swift
+  func someFunctionThatTakesAClosure(closure:() -> Void){
+         //function body goes here
+    }
+   
+    //here's how you call this function without using a trailing closure   
+  someFunctionThatTakesAClosure(closure: {
+         //closure's body goes here
+    })
+      
+    //here's how you call this function with a trailing closure instead        
+  someFunctionThatTakesAClosure() {
+    // trailing closure's body goes here    
+  }
+```
+
+#### 2.1 字符串排列闭包 可以作为一个 尾随闭包 被书写在 sorted(by:) 方法的括号外面：
+```Swift
+  reversedNames = names.sorted() { $0 > $1 }
+```    
+
+#### 2.2 闭包表达式作为 函数的 唯一实际参数 传入，而你又使用了尾随闭包的语法，省略 函数名后边 圆括号：
+```Swift
+  reversedNames = names.sorted { $0 > $1 }
+```        
+
+#### 2.3 长闭包 不能被写成一行时, 尾随闭包 就显得非常有用了
+Swift 的 Array 类型中有一个以闭包表达式为唯一的实际参数的 map(_:) 方法。数组中每一个元素调用一次该闭包，并且返回该元素所映射的值（有可能是其他类型）。具体的映射方式和返回值的类型由你传入 map(_:)的闭包来指定。
+
+在给数组中每一个元素应用了你提供的闭包后， map(_:)方法返回一个新的数组，数组中包涵与原数组一一对应的映射值。
+
+总之，使用带有尾随闭包的 map(_:) 方法将包含 Int 值的数组转换成包含 String 值的数组。这个数组  [16,58,510] 被转换成一个新的数组 ["OneSix","FiveEight","FiveOneZero"]
+```swift
+  let digitNames = [
+    0: "Zero",1: "One",2: "Two",  3: "Three",4: "Four",
+    5: "Five",6: "Six",7: "Seven",8: "Eight",9: "Nine"
+  ]
+  
+  let numbers = [16,58,510]
+```
+
+上面的代码创建了一个 整数数字 到它们 英文名字 之间的 映射字典，同时定义了一个 将被转换成字符串的 整数数组。
+
+你现在可以利用 numbers 数组来创建一个 String 类型的数组。通过给数组的  map(_:)方法传入闭包表达式来实现，这个形式参数将以尾随闭包的形式来书写
+```swift
+let strings = numbers.map { (number) -> String in
+    var number = number
+    var output = ""
+    repeat {
+        output = digitNames[number % 10]! + output
+        number /= 10
+    } while number > 0
+    return output
+}
+```
+在上面这个例子中尾随闭包语法在函数后整洁地封装了具体的闭包功能，而不再需要将整个闭包包裹在 map(_:) 方法的括号内。
+
+### 2.4 如果函数接收多个闭包，你可省略第一个 尾随闭包的实际参数标签，但要给后续的尾随闭包写标签。比如说，下面的函数给照片墙加载图片：
+```swift
+func loadPicture(from server: Server, completion: (Picture) -> Void, onFailure: () -> Void) {
+    if let picture = download("photo.jpg", from: server) {
+        completion(picture)
+    } else {
+        onFailure()
+    }
+}
+```
+
+##### 当你调用这个函数来加载图片，你需要提供两个闭包。第一个闭包是图片下载成功后的回调。第二个闭包是报错回调，给用户显示错误。
+在这个例子中， loadPicture(from:completion:onFailure:) 函数把它的网络任务派遣到后台执行，然后等任务结束就调用这两个回调之一。这么写函数能让你整洁地安排代码，单独处理网络错误，避免处理成功的用户界面混为一谈，取代了用一个闭包处理两种状况的操作。
+```Swift
+ loadPicture(from: someServer) { picture in
+    someView.currentPicture = picture
+  } onFailure: {
+    print("Couldn't download the next picture.")
+  }
+```        
+
+### 3 捕获值
+一个闭包能够从上下文捕获已被定义的常量和变量。即使定义这些常量和变量的原作用域已经不存在，闭包仍能够在其函数体内引用和修改这些值。
+
+在 Swift 中，一个能够捕获值的闭包最简单的模型是内嵌函数，即被书写在另一个函数的内部。一个内嵌函数能够捕获外部函数的实际参数并且能够捕获任何在外部函数的内部定义了的常量与变量。
+
+这里有个命名为 makeIncrement 的函数栗子，其中包含了一个名叫 incrementer 一个内嵌函数。这个内嵌 incrementer()  函数能在它的上下文捕获两个值， runningTotal  和 amount 。在捕获这些值后，通过 makeIncrement 将 incrementer作为一个闭包返回，每一次调用 incrementer 时，将以 amount作为增量来增加 runningTotal ：
+```Swift
+func makeIncrementer(forIncrement amount: Int) -> () -> Int {
+    var runningTotal = 0
+    func incrementer() -> Int {
+        runningTotal += amount
+        return runningTotal
+    }
+    return incrementer
+}
+```        
+
+makeIncrementer 的返回类型是 () -> Int ，意思就是比起返回一个单一的值，它返回的是一个函数。这个函数没有返回任何形式参数，每调用一次就返回一个 Int 值
+
+makeIncrementer 定义了一个名叫 incrementer 的内嵌函数，表明实际增加量，这个函数直接把 amount 增加到 runningTotal ，并且返回结果。
+
+incrementer() 函数是没有任何形式参数， runningTotal 和 amount 不是来自于函数体的内部，而是通过捕获主函数的 runningTotal 和 amount 把它们内嵌在自身函数内部供使用。当调用 makeIncrementer  结束时通过引用捕获来确保不会消失，并确保了在下次再次调用 incrementer 时， runningTotal 将继续增加。
+
+##### 这有个使用 makeIncrementer 的栗子：
+```Swift
+  let incrementByTen = makeIncrementer(forIncrement: 10)
+```        
+这个例子定义了一个叫 incrementByTen 的常量，该常量指向一个每次调用会加 10 的函数。调用这个函数多次得到以下结果：
+```Swift
+  incrementByTen()
+  //return a value of 10
+  incrementByTen()
+  //return a value of 20
+  incrementByTen()
+  //return a value of 30
+```
+
+第二个 incrementer ,它将会有一个新的、独立的 runningTotal 变量的引用：
+```Swift
+let incrementBySeven = makeIncrementer(forIncrement: 7)
+incrementBySeven()
+// returns a value of 7
+```        
+
+再次调用原来增量器 incrementByTen  继续增加它自己的变量 runningTotal 的值，并且不会影响 incrementBySeven 捕获的变量 runningTotal 值：
+```Swift
+  incrementByTen()
+// returns a value of 40
+```        
+#### 闭包是引用类型
+在上面例子中， incrementBySeven 和 incrementByTen 是常量，但是这些常量指向的闭包仍可以增加已捕获的变量 runningTotal 的值。这是因为函数和闭包都是引用类型。
+无论你什么时候赋值一个函数或者闭包给常量或者变量，你实际上都是将常量和变量设置为对函数和闭包的引用。这上面这个例子中，闭包选择 incrementByTen 指向一个常量，而不是闭包它自身的内容。
+这也意味着你赋值一个闭包到两个不同的常量或变量中，这两个常量或变量都将指向相同的闭包：
+```Swift
+  let alsoIncrementByTen = incrementByTen
+  alsoIncrementByTen()
+  //return a value of 50
+```
