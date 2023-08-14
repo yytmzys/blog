@@ -1,6 +1,6 @@
 # [Swift语法和基础](https://github.com/yytmzys/blog/issues/3)
 
-swift 知识分类
+Swift 知识分类
 ----
 ### 1 语法和基础：
 变量、常量和数据类型 https://github.com/yytmzys/blog/issues/3#issuecomment-1674663958
