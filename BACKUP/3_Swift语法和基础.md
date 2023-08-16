@@ -1304,3 +1304,130 @@ incrementBySeven()
   alsoIncrementByTen()
   //return a value of 50
 ```
+
+### 4 逃逸闭包
+当闭包作为一个实际参数传递给一个函数的时候，我们就说这个闭包逃逸了，因为它是在函数返回之后调用的。当你声明一个接受闭包作为形式参数的函数时，你可以在形式参数前写 @escaping 来明确闭包是允许逃逸的。
+
+闭包可以逃逸的一种方法是被储存在定义于函数外的变量里。比如说，很多函数接收闭包实际参数来作为启动异步任务的回调。函数在启动任务后返回，但是闭包要直到任务完成——闭包需要逃逸，以便于稍后调用。举例来说：
+```swift
+var completionHandlers: [() -> Void] = []
+func someFunctionWithEscapingClosure(completionHandler: @escaping () -> Void) {
+    completionHandlers.append(completionHandler)
+}
+```
+#### 4.1 逃逸闭包修改变量
+要捕获 self ，就明显地写出来，或者在闭包的捕获列表中包含 self 。显式地写出 self 能让你更清楚地表达自己的意图，并且提醒你去确认这里有没有引用循环       
+```
+  var completionHandlers: [() -> Void] = []
+func someFunctionWithEscapingClosure(completionHandler: @escaping () -> Void) {
+    completionHandlers.append(completionHandler)
+}
+
+
+func someFunctionWithNonescapingClosure(closure: () -> Void) {
+    closure()
+}
+ 
+class SomeClass {
+    var x = 10
+    func doSomething() {
+        someFunctionWithEscapingClosure { self.x = 100 }
+        someFunctionWithNonescapingClosure { x = 200 }
+    }
+}
+ 
+let instance = SomeClass()
+instance.doSomething()
+print(instance.x)
+// Prints "200"
+ 
+completionHandlers.first?()
+print(instance.x)
+// Prints "100"
+```
+这里是一个通过把 self 放在闭包捕获列表来捕获 self 的 doSomething() 版本：
+```swift
+class SomeOtherClass {
+    var x = 10
+    func doSomething() {
+        someFunctionWithEscapingClosure { [self] in x = 100 }
+        someFunctionWithNonescapingClosure { x = 200 }
+    }
+}
+
+SomeOtherClass()
+// x = 10
+```
+如果 self 是结构体或者枚举的实例，你就可以隐式地引用 self 。总之，当 self 是结构体或者枚举的实例时，逃逸闭包不能捕获可修改的 self 引用。如同[结构体和枚举是值类型](https://www.cnswift.org/classes-and-structures#spl-6)中描述的那样，结构体和枚举不允许共享可修改性。
+```swift
+struct SomeStruct {
+    var x = 10
+    mutating func doSomething() {
+        someFunctionWithNonescapingClosure { x = 200 }  // Ok
+        someFunctionWithEscapingClosure { x = 100 }     // Error
+    }
+}
+```
+someFunctionWithEscapingClosure 调用在上文中是错误的，因为它在一个异变方法中，所以 self 是可编辑的。这就违反了逃逸闭包不能捕获结构体的可编辑引用 self 的规则。
+
+### 4 自动闭包
+自动闭包是一种自动创建的用来把作为实际参数传递给函数的表达式打包的闭包。它不接受任何实际参数，并且当它被调用时，它会返回内部打包的表达式的值。这个语法的好处在于通过写普通表达式代替显式闭包而使你省略包围函数形式参数的括号。
+
+调用一个带有自动闭包的函数是很常见的，但实现这类函数就不那么常见了。比如说， assert(condition:message:file:line:) 函数为它的 condition  和 message 形式参数接收一个自动闭包；它的 condition 形式参数只有在调试构建是才评判，而且 message 形式参数只有在 condition 是 false 时才评判。
+
+自动闭包允许你延迟处理，因此闭包内部的代码直到你调用它的时候才会运行。对于有副作用或者占用资源的代码来说很有用，因为它可以允许你控制代码何时才进行求值。下面的代码展示了闭包如何延迟求值。
+```swift
+  var customersInLine = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
+print(customersInLine.count)
+// Prints "5"
+ 
+let customerProvider = { customersInLine.remove(at: 0) }
+print(customersInLine.count)
+// Prints "5"
+ 
+print("Now serving \(customerProvider())!")
+// Prints "Now serving Chris!"
+print(customersInLine.count)
+// Prints "4"
+```
+尽管 customersInLine 数组的第一个元素以闭包的一部分被移除了，但任务并没有执行直到闭包被实际调用。如果闭包永远不被调用，那么闭包里边的表达式就永远不会求值。注意 customerProvider 的类型不是 String 而是  () -> String ——一个不接受实际参数并且返回一个字符串的函数。
+#### 4.1 当你传一个闭包作为实际参数到函数的时候，你会得到与延迟处理相同的行为。
+接收一个明确的返回下一个客户名称的闭包
+```
+// customersInLine is ["Alex", "Ewa", "Barry", "Daniella"]
+func serve(customer customerProvider: () -> String) {
+    print("Now serving \(customerProvider())!")
+}
+serve(customer: { customersInLine.remove(at: 0) } )
+// Prints "Now serving Alex!"
+```             
+#### 4.2 另一个版本的 serve(customer:) 执行相同的任务但是不使用明确的闭包而是通过 @autoclosure 标志标记它的形式参数使用了自动闭包。
+现在你可以调用函数就像它接收了一个 String 实际参数而不是闭包。实际参数自动地转换为闭包，因为 customerProvider 形式参数的类型被标记为 @autoclosure 标记。
+```Swift
+// customersInLine is ["Ewa", "Barry", "Daniella"]
+func serve(customer customerProvider: @autoclosure () -> String) {
+    print("Now serving \(customerProvider())!")
+}
+serve(customer: customersInLine.remove(at: 0))
+// Prints "Now serving Ewa!"
+```
+        
+#### 4.3 自动闭包逃逸，同时使用 @autoclosure 和 @escaping  
+不是调用传入后作为 customerProvider 实际参数的闭包， collectCustomerProviders(_:) 函数把闭包追加到了 customerProviders 数组的末尾。数组声明在函数的生效范围之外，也就是说数组里的闭包有可能在函数返回之后执行。结果， customerProvider 实际参数的值必须能够逃逸出函数的生效范围。
+```Swift
+// customersInLine is ["Barry", "Daniella"]
+var customerProviders: [() -> String] = []
+func collectCustomerProviders(_ customerProvider: @autoclosure @escaping () -> String) {
+    customerProviders.append(customerProvider)
+}
+collectCustomerProviders(customersInLine.remove(at: 0))
+collectCustomerProviders(customersInLine.remove(at: 0))
+ 
+print("Collected \(customerProviders.count) closures.")
+// Prints "Collected 2 closures."
+for customerProvider in customerProviders {
+    print("Now serving \(customerProvider())!")
+}
+// Prints "Now serving Barry!"
+// Prints "Now serving Daniella!"
+```
