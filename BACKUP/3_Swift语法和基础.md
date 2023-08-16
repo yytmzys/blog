@@ -1370,7 +1370,7 @@ struct SomeStruct {
 ```
 someFunctionWithEscapingClosure 调用在上文中是错误的，因为它在一个异变方法中，所以 self 是可编辑的。这就违反了逃逸闭包不能捕获结构体的可编辑引用 self 的规则。
 
-### 4 自动闭包
+### 5 自动闭包
 自动闭包是一种自动创建的用来把作为实际参数传递给函数的表达式打包的闭包。它不接受任何实际参数，并且当它被调用时，它会返回内部打包的表达式的值。这个语法的好处在于通过写普通表达式代替显式闭包而使你省略包围函数形式参数的括号。
 
 调用一个带有自动闭包的函数是很常见的，但实现这类函数就不那么常见了。比如说， assert(condition:message:file:line:) 函数为它的 condition  和 message 形式参数接收一个自动闭包；它的 condition 形式参数只有在调试构建是才评判，而且 message 形式参数只有在 condition 是 false 时才评判。
@@ -1391,7 +1391,7 @@ print(customersInLine.count)
 // Prints "4"
 ```
 尽管 customersInLine 数组的第一个元素以闭包的一部分被移除了，但任务并没有执行直到闭包被实际调用。如果闭包永远不被调用，那么闭包里边的表达式就永远不会求值。注意 customerProvider 的类型不是 String 而是  () -> String ——一个不接受实际参数并且返回一个字符串的函数。
-#### 4.1 当你传一个闭包作为实际参数到函数的时候，你会得到与延迟处理相同的行为。
+#### 5.1 当你传一个闭包作为实际参数到函数的时候，你会得到与延迟处理相同的行为。
 接收一个明确的返回下一个客户名称的闭包
 ```
 // customersInLine is ["Alex", "Ewa", "Barry", "Daniella"]
@@ -1401,7 +1401,7 @@ func serve(customer customerProvider: () -> String) {
 serve(customer: { customersInLine.remove(at: 0) } )
 // Prints "Now serving Alex!"
 ```             
-#### 4.2 另一个版本的 serve(customer:) 执行相同的任务但是不使用明确的闭包而是通过 @autoclosure 标志标记它的形式参数使用了自动闭包。
+#### 5.2 另一个版本的 serve(customer:) 执行相同的任务但是不使用明确的闭包而是通过 @autoclosure 标志标记它的形式参数使用了自动闭包。
 现在你可以调用函数就像它接收了一个 String 实际参数而不是闭包。实际参数自动地转换为闭包，因为 customerProvider 形式参数的类型被标记为 @autoclosure 标记。
 ```Swift
 // customersInLine is ["Ewa", "Barry", "Daniella"]
@@ -1412,7 +1412,7 @@ serve(customer: customersInLine.remove(at: 0))
 // Prints "Now serving Ewa!"
 ```
         
-#### 4.3 自动闭包逃逸，同时使用 @autoclosure 和 @escaping  
+#### 5.3 自动闭包逃逸，同时使用 @autoclosure 和 @escaping  
 不是调用传入后作为 customerProvider 实际参数的闭包， collectCustomerProviders(_:) 函数把闭包追加到了 customerProviders 数组的末尾。数组声明在函数的生效范围之外，也就是说数组里的闭包有可能在函数返回之后执行。结果， customerProvider 实际参数的值必须能够逃逸出函数的生效范围。
 ```Swift
 // customersInLine is ["Barry", "Daniella"]
