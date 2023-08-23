@@ -6,7 +6,7 @@
 
 |  code | url |
 |  ----  | ----  | 
-| SwiftUI基础 | |
+| SwiftUI基础 | https://github.com/yytmzys/blog/issues/85 |
 |  文本视图 Text, Label, TextField, TextEditor, SecureField | https://github.com/yytmzys/blog/issues/86 | 
 | 图片 Image AsyncImage| https://github.com/yytmzys/blog/issues/87 |
 |  按钮-Button  |    | 
@@ -33,7 +33,7 @@
 
 |  code | url|
 |  ----  | ----  | 
-| 变量、常量和数据类型	| https://github.com/yytmzys/blog/issues/3 |
+| Swift语法和基础	| https://github.com/yytmzys/blog/issues/3 |
 | 函数和闭包	| https://github.com/yytmzys/blog/issues/4 |
 | 类和结构体            | https://github.com/yytmzys/blog/issues/5 |
 | 枚举            | https://github.com/yytmzys/blog/issues/6 |
